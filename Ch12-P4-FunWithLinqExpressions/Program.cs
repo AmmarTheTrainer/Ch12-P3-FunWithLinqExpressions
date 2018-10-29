@@ -38,7 +38,9 @@ namespace Ch12_P4_FunWithLinqExpressions
             //DisplayDiff();
             //DisplayConcat();
 
-            AggregateOps();
+            //AggregateOps();
+
+            AlphabetizeProductNames(itemsInStock);
 
             Console.ReadLine();
         }
@@ -113,7 +115,10 @@ namespace Ch12_P4_FunWithLinqExpressions
         static void AlphabetizeProductNames(ProductInfo[] products)
         {
             // Get names of products, alphabetized.
-            var subset = from p in products orderby p.Name select p;
+            //var subset = from p in products orderby p.Name descending select p;
+
+            var subset = from p in products orderby p.Name ascending select p;
+
             Console.WriteLine("Ordered by Name:");
             foreach (var p in subset)
             {
